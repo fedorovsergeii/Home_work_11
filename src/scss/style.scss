@@ -1,0 +1,133 @@
+@use "reset";
+@use "variables" as *;
+@use "mixins";
+@use "header";
+@use "content";
+@use "footer";
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.container {
+  width: calc(100vw - 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: max(50vw , 300px);
+  padding-top: 12%;
+  padding-bottom: 10%;
+}
+
+h2{
+  font-size: max(32px, 3vw);
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 7%;
+}
+
+.description {
+  @include mixins.description;
+  text-align: center;
+}
+
+.project__container {
+  background: $project-color;
+  padding: 10% 0;
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 4vw;
+  gap: 4vw;
+}
+
+.project__item {
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  height: max(4vw, 50px);
+  width: max(12vw, 141px);
+  background: no-repeat url("../../assets/images/project2.svg") ;
+  padding-left: max(5vw, 70px);
+  letter-spacing: 0.05em;
+  font-size: max(1.5vw, 16px);
+  line-height: max(1.5vw, 16px);
+}
+
+.project__item span {
+  font-size: max(1.5vw, 16px);
+}
+
+.main {
+  background-color: $header-color;
+  padding-block: 10%;
+}
+
+.main__container {
+  width: max(50vw, 300px);
+  padding-bottom: 7%;
+  margin: 0 auto;
+}
+
+.main__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+iframe {
+  width: 100%;
+  height: 55vw;
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 355px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+
+  .about {
+    padding-block: 50px;
+  }
+
+  .project__container {
+    padding-block: 50px;
+  }
+
+  .project {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .project__item {
+    padding-left: 60px;
+  }
+  .main__container {
+    width: 100%;
+    padding-bottom: 58px;
+    margin: 0 auto;
+  }
+
+  iframe {
+    width: 335px;
+    height: 200px;
+  }
+}
+

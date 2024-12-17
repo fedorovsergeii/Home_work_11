@@ -1,0 +1,13 @@
+@use "variables" as *;
+@mixin flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin description {
+  color: $description-color;
+  line-height: max(3vw, 26px);
+  font-size: max(1.5vw, 16px);
+  letter-spacing: 0.025em;
+}
